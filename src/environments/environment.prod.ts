@@ -14,10 +14,10 @@ export const environment = {
   // For connecting to others servers running elsewhere update the base API URL
   baseApiUrls:
     loadedEnv['fineractApiUrls'] ||
-    'https://sandbox.mifos.community,https://demo.mifos.community,https://localhost:8443,' + window.location.origin,
+    'https://sandbox.mifos.community,https://demo.mifos.community,https://localhost:8443,http://147.93.40.101:5005,' + window.location.origin,
   // For connecting to server running elsewhere set the base API URL
   baseApiUrl:
-    loadedEnv['fineractApiUrl'] ||
+    'http://147.93.40.101:5005' ||
     (loadedEnv['fineractApiUrls']?.length > 0 ? loadedEnv['fineractApiUrls'][0] : window.location.origin),
   oauthServerUrl: loadedEnv['oauthServerUrl'] || loadedEnv['fineractApiUrl'] + loadedEnv['apiProvider'],
   allowServerSwitch: env.allow_switching_backend_instance,
@@ -50,7 +50,7 @@ export const environment = {
   waitTimeForCOBCatchUp: loadedEnv['waitTimeForCOBCatchUp'] || 30,
   session: {
     timeout: {
-      idleTimeout: loadedEnv['sessionIdleTimeout'] || 300000 // 5 minutes
+      idleTimeout: loadedEnv['sessionIdleTimeout'] || 3000000 // 5 minutes
     }
   },
 
