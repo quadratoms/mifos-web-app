@@ -37,7 +37,7 @@ RUN npm install --location=global @angular/cli@16.0.2
 
 RUN npm install
 
-RUN ng build --output-path=/dist $BUILD_ENVIRONMENT_OPTIONS
+RUN ng build --output-path=/dist
 
 ###############
 ### STAGE 2: Serve app with nginx ###
